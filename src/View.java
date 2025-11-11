@@ -2,10 +2,11 @@ import javax.swing.*;
 
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class View extends JFrame {
 
-    private JButton saveBtn;
+    private JButton saveBtn, deleteThisBtn, deleteAllBtn, loadBtn ;
     private JTextField nameTf, birthdayTf;
 
      public View( int width, int height){
@@ -15,7 +16,10 @@ public class View extends JFrame {
          show();
      }
 
-     private void createUI(){
+    /**
+     * Erstellen der Nutzeroberfläche
+     */
+    private void createUI(){
          //3 Panel für die Inhalte erzeugen
          JPanel topPanel = new JPanel();
          JPanel centerPanel = new JPanel();
@@ -23,7 +27,6 @@ public class View extends JFrame {
 
          //Inhalte UI-Elemente als Objekte erzeugen
          JLabel headline = new JLabel("Neuen Geburtstag anlegen");
-
          JLabel nameLabel = new JLabel("Name eingeben");
          nameTf = new JTextField();
 
@@ -31,8 +34,13 @@ public class View extends JFrame {
          birthdayTf = new JTextField();
 
          saveBtn = new JButton("Speichern");
+         loadBtn = new JButton("Laden");
+         deleteAllBtn = new JButton("Alles Löschen");
+         deleteThisBtn = new JButton("Dieses Löschen");
 
-         //Layout festlegen für die Panel
+
+
+         //Grid-Layout festlegen für die Panel
          centerPanel.setLayout( new GridLayout( 2, 2, 5, 5 ));
          centerPanel.setBorder( new EmptyBorder(5,5,5,5) );
 
@@ -46,7 +54,11 @@ public class View extends JFrame {
          centerPanel.add( birthdayTf );
 
          //befüllen des Bottompanels
-         bottomPanel.add( saveBtn );
+        bottomPanel.add( saveBtn );
+        bottomPanel.add( loadBtn );
+        bottomPanel.add( deleteAllBtn );
+        bottomPanel.add( deleteThisBtn );
+
 
          // panel dem jframe hinzufügen
          add(topPanel, BorderLayout.NORTH);
@@ -57,10 +69,38 @@ public class View extends JFrame {
          //Hausaufgabe:
          // Fügen Sie 3 weitere Button hinzu "Dieses Löschen", "Alles Löschen", "Laden"
          // neben dem vorhandenen Speichern-Button
-
-
      }
 
+    /**
+     * Fügt dem Save-Button einen Eventlistener bzw. ActionListener zu
+     * @param listener - Eventlistener
+     */
+    public void addSaveHandler(ActionListener listener){
+        saveBtn.addActionListener( listener );
+    }
 
+    /**
+     * Fügt dem DeleteAll-Button einen Eventlistener bzw. ActionListener zu
+     * @param listener - Eventlistener
+     */
+    public void addDeleteAllHandler(ActionListener listener){
+       deleteAllBtn.addActionListener( listener );
+    }
+
+    /**
+     * Fügt dem DeleteThis-Button einen Eventlistener bzw. ActionListener zu
+     * @param listener - Eventlistener
+     */
+    public void addDeleteThisHandler(ActionListener listener){
+        deleteThisBtn.addActionListener( listener );
+    }
+
+    /**
+     * Fügt dem Load-Button einen Eventlistener bzw. ActionListener zu
+     * @param listener - Eventlistener
+     */
+    public void addLoadHandler(ActionListener listener){
+       loadBtn.addActionListener( listener );
+    }
 
 }
