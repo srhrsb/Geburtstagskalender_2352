@@ -77,6 +77,12 @@ public class View extends JFrame {
      */
     public void addSaveHandler(ActionListener listener){
         saveBtn.addActionListener( listener );
+
+
+
+
+
+
     }
 
     /**
@@ -102,5 +108,16 @@ public class View extends JFrame {
     public void addLoadHandler(ActionListener listener){
        loadBtn.addActionListener( listener );
     }
+
+
+    //Getter für Textfelder
+    public String getNameText(){
+        return nameTf.getText();
+    }
+
+    public String getDateText(){
+        return birthdayTf.getText();
+    }
+
 
 }
