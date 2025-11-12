@@ -6,7 +6,6 @@ public class Controller {
     private BirthdayDAO dao;
 
     public Controller(){
-        //ToDo: mainView erzeugen
 
         this.mainView = new View( 600, 180);
         System.out.println(mainView);
@@ -24,7 +23,7 @@ public class Controller {
 
         //Vorgehensweise:
         //1. Daten holen (Namen, Geburtsdatum)
-        String name = mainView.getNameText();
+        String  name= mainView.getNameText();
         String date = mainView.getDateText();
 
         //2. Daten validieren (Daten auf Zulässigkeit prüfen)

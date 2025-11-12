@@ -1,7 +1,5 @@
 public class BirthdayDAO {
 
-
-
     public void addBirthday( String name, String date){
 
         Birthday birthday = new Birthday( name, date);
