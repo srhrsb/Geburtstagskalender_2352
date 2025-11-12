@@ -2,10 +2,18 @@ import java.awt.event.ActionEvent;
 
 public class Controller {
 
+    //Konstanten
+    private final int  MIN_NAME_LENGTH = 2;
+
+    //Felder
     private View mainView;
     private BirthdayDAO dao;
 
     public Controller(){
+
+
+
+
 
         this.mainView = new View( 600, 180);
         System.out.println(mainView);
@@ -27,13 +35,15 @@ public class Controller {
         String date = mainView.getDateText();
 
         //2. Daten validieren (Daten auf Zulässigkeit prüfen)
-        if(name.length() < 2 ){
-            //ToDo: Info Dialog anzeigen
+        if(name.trim().length() < MIN_NAME_LENGTH ){
+            mainView.showErrorDialog("Fehler", "Der Name ist ungültig, " +
+                    "er muss länger als 1 Zeichen sein");
             return;
         }
 
-        if(date.length() < 2 ){
-            //ToDo: Info Dialog anzeigen
+        if(date.trim().length() < 2 ){
+            mainView.showErrorDialog("Fehler", "Das Datum ist ungültig, " +
+                    "es muss länger als 1 Zeichen sein");
             return;
         }
 

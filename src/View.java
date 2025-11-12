@@ -78,11 +78,6 @@ public class View extends JFrame {
     public void addSaveHandler(ActionListener listener){
         saveBtn.addActionListener( listener );
 
-
-
-
-
-
     }
 
     /**
@@ -109,8 +104,7 @@ public class View extends JFrame {
        loadBtn.addActionListener( listener );
     }
 
-
-    //Getter für Textfelder
+    //Getter für Textfelder---------------------------
     public String getNameText(){
         return nameTf.getText();
     }
@@ -119,5 +113,13 @@ public class View extends JFrame {
         return birthdayTf.getText();
     }
 
+    //Dialog-Methoden--------------------
+    public void showErrorDialog( String titel, String text ){
+        JOptionPane.showMessageDialog( this , text, titel, JOptionPane.ERROR_MESSAGE);
+    }
 
+    //Hausaufgabe: Fügen Sie noch eine Methode "showInfoMessage"
+    // und eine "showConfirmMessage" hinzu, showConfirmMessage soll
+    //true zurückgeben wenn "ok" gedrückt wurde, und false, wenn "cancel"
+    //gedrückt wurde
 }

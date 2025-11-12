@@ -1,10 +1,17 @@
+import java.util.ArrayList;
+
 public class BirthdayDAO {
+
+    private ArrayList<Birthday> birthdayList;
+
+    public BirthdayDAO(){
+        birthdayList = new ArrayList<>();
+    }
 
     public void addBirthday( String name, String date){
 
-        Birthday birthday = new Birthday( name, date);
-
-        //ToDo: in Liste speichern
+        birthdayList.add( new Birthday( name, date) );
+        System.out.println("Birthdaylist Size: " + birthdayList.size() );
     }
 
     public void save(){
