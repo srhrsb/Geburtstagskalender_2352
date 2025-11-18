@@ -62,14 +62,17 @@ public class Controller {
     private void onClickDeleteAll(ActionEvent event){
         System.out.println( event.getActionCommand() );
 
-        //Todo: 1. Löschmethode des DAO verwenden
-        //Todo: 2. Erfolgsmeldung prüfen und entsprechende
-        //         Meldungen zurückgeben
+        //Hausaufgabe: Fragen Sie unter Nutzung des Confirm-Dialogs
+        //ob wirklich gelöscht werden soll
 
+        boolean success = dao.deleteAll();
 
-
-
-
+        if(success){
+            mainView.showInfoDialog("Info","Alle Geburtstage wurden gelöscht");
+        }
+        else{
+            mainView.showErrorDialog("Fehler","Beim Löschen ist ein Fehler aufgetreten");
+        }
     }
 
     private void onClickLoad(ActionEvent event){
