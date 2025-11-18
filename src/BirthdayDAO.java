@@ -14,6 +14,16 @@ public class BirthdayDAO {
         System.out.println("Birthdaylist Size: " + birthdayList.size() );
     }
 
+    public boolean deleteAll(){
+
+        //ToDo: birthdaylist leeren
+        if( birthdayList != null) {
+            birthdayList.clear();
+        }
+
+        return true;
+    }
+
     public void save(){
 
     }

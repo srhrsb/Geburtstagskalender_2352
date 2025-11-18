@@ -51,6 +51,8 @@ public class Controller {
         //3. vom DAO die addBirthday-Methoden nutzen
         dao.addBirthday( name, date);
 
+        //ToDo: Info Erfolgsmeldung
+        mainView.showInfoDialog("Info","Neuer Geburtstag wurde eingetragen");
     }
 
     private void onClickDeleteThis( ActionEvent event ){
@@ -59,6 +61,15 @@ public class Controller {
 
     private void onClickDeleteAll(ActionEvent event){
         System.out.println( event.getActionCommand() );
+
+        //Todo: 1. Löschmethode des DAO verwenden
+        //Todo: 2. Erfolgsmeldung prüfen und entsprechende
+        //         Meldungen zurückgeben
+
+
+
+
+
     }
 
     private void onClickLoad(ActionEvent event){

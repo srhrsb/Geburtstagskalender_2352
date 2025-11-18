@@ -118,8 +118,24 @@ public class View extends JFrame {
         JOptionPane.showMessageDialog( this , text, titel, JOptionPane.ERROR_MESSAGE);
     }
 
-    //Hausaufgabe: Fügen Sie noch eine Methode "showInfoMessage"
+    //Hausaufgabe: Fügen Sie noch eine Methode "showInfoDialog"
     // und eine "showConfirmMessage" hinzu, showConfirmMessage soll
     //true zurückgeben wenn "ok" gedrückt wurde, und false, wenn "cancel"
     //gedrückt wurde
+    public void showInfoDialog( String titel, String text ){
+        JOptionPane.showMessageDialog( this , text, titel, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public boolean showConfirmDialog( String titel, String text ){
+        int result = JOptionPane.showConfirmDialog(
+                this,text, titel, JOptionPane.OK_CANCEL_OPTION
+        );
+
+        return result == JOptionPane.OK_OPTION;
+    }
+
+
+
+
+
 }
